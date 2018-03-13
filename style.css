@@ -1,0 +1,241 @@
+* {
+  /*font-family: 'Indie Flower', cursive;*/
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: rgb(38, 38, 38);
+  padding: 0px;
+  margin: 0px;
+  /*font-family: 'Roboto', sans-serif;*/
+
+}
+
+div {
+  padding: 0px;
+  margin: 0px;
+}
+
+p {
+  font-size: 18px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+
+.btn {
+  background-color: #4CAF50;
+  border: none;
+  color: black;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /*margin-left: -2px;
+  margin-right: -2px;*/
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn:hover {
+  filter: brightness(85%);
+}
+
+.btnGroup {
+  width: 100%;
+}
+
+.divSelectorBtn {
+  height: 80px;
+}
+
+
+.buyBtn, .jobBtn {
+  float:left;
+  margin: 1%;
+  height: 50px;
+  width: 31.33%;
+  background-color: rgb(13, 176, 88);
+
+}
+.jobBtn {
+background-color: rgb(2, 70, 5);
+}
+
+.bottomBorder {
+  border-style: solid;
+  border-width: 0px;
+
+  border-bottom-width: 2px;
+  box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.2), 0 3px 0px 0 rgba(0, 0, 0, 0.19);
+}
+.secondHeader {
+  padding-bottom: 22px;
+  padding-top: 22px;
+  margin-top: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.addFireBtn {
+  background-color: rgb(2, 70, 5);
+  float: left;
+  width: 48%;
+  margin: 1%;
+  height: 50px;
+}
+#hire {
+  background-color: rgb(4, 50, 0);
+}
+#fire {
+  background-color: rgb(2, 70, 5);
+}
+
+
+#tooltip {
+  display: none;
+  position: fixed;
+  overflow: hidden;
+  z-index: 10;
+  border-style: solid;
+  border-width: 3px;
+  padding: 5px;
+  min-width: 200px;
+  min-height: 50px;
+  background-color: rgb(133, 122, 233);
+}
+
+
+#wrapper {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1000fr;
+
+}
+
+
+#header {
+  padding: 0px;
+  background-color: rgb(2, 70, 5);
+  text-align: center;
+  grid-column: 1/4;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.headerBtn {
+  padding: 20px;
+  float: right;
+  margin: 0px !important;
+  background-color: rgb(2, 100, 5) !important;
+}
+
+
+#resourcesGrid {
+
+  background-color: rgb(21, 172, 95);
+  text-align: center;
+  grid-row: 2/3;
+}
+
+.resourceName {
+  float: left;
+  width: 25%;
+}
+.resourceAmount {
+  float: left;
+  width: 25%;
+}
+.resourceMaxAmount {
+  float: left;
+  width: 25%;
+}
+.resourcePerSec {
+  float: left;
+  width: 25%;
+}
+
+.oneThird {
+  float: left;
+  width: 30%;
+}
+.twoThird {
+  float: left;
+  width: 60%;
+}
+.fillBtn {
+  width:90%;
+  height:30px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 20px;
+  background: #4CAF50;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: rgb(45, 110, 47);
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.centerText {
+  text-align: center;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.progressBarOuter {
+  width: 90%;
+  height: 50px;
+  background: rgb(71, 13, 13);
+  clear: both;
+  margin: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.progressBarInner {
+  width: 20%;
+  height: 100%;
+  background-color: rgb(15, 134, 17);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+#middleGrid {
+
+  background-color: rgb(2, 70, 5);
+  text-align: center;
+}
+#middleGridHeader {
+  background-color: rgb(2, 70, 5);
+  padding-bottom: 10px;
+}
+#middleGridHeader > button {
+  width: 50%;
+  float: left;
+}
+
+#buildingsBtn {
+  background-color: rgb(0, 96, 41);
+}
+
+#buildingsDiv {
+  display: block;
+}
+#upgradesDiv {
+  display: none;
+}
+
+
+#rightGrid {
+
+  background-color: rgb(21, 172, 95);
+  text-align: center;
+}

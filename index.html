@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  
+  <script src="script.js"></script>
+
+  <title>Dragon's Game</title>
+</head>
+<body>
+  <div id="tooltip">
+    some text
+    <div id="tooltipDescription"></div>
+  </div>
+
+
+
+  <div id="wrapper">
+    <div id="header">
+      <button class="btn headerBtn" type="button" name="button" onclick="hardReset()">Hard Reset</button>
+      <button class="btn headerBtn" type="button" name="button" onclick="loadGame()">Load</button>
+      <button class="btn headerBtn" type="button" name="button" onclick="saveGame()">Save</button>
+    </div>
+    <div id="resourcesGrid">
+
+      <h1 class="bottomBorder secondHeader">Resources</h1>
+
+      <!--       Gammal 
+      <p id="wood"     class="bottomBorder">Wood</p>
+      <p id="minerals" class="bottomBorder">Minerals</p>
+      <p id="coal"     class="bottomBorder">Coal</p>
+      <p id="iron"     class="bottomBorder">Iron</p>
+      <p id="gold"     class="bottomBorder">Gold</p>
+      <p id="wheat"    class="bottomBorder">Wheat</p>
+      <p id="food"     class="bottomBorder">Food</p>
+      -->
+
+      <div class ="resourceDiv">
+        <div class="resourceName">
+          <p id="woodName"     class="bottomBorder">Wood</p>
+          <p id="mineralsName" class="bottomBorder">Minerals</p>
+          <p id="coalName"     class="bottomBorder">Coal</p>
+          <p id="ironName"     class="bottomBorder">Iron</p>
+          <p id="goldName"     class="bottomBorder">Gold</p>
+          <p id="wheatName"    class="bottomBorder">Wheat</p>
+        </div>
+  
+        <div class="resourceAmount">
+          <p id="woodAmount"     class="bottomBorder">WoodAmount</p>
+          <p id="mineralsAmount" class="bottomBorder">MineralsAmount</p>
+          <p id="coalAmount"     class="bottomBorder">CoalAmount</p>
+          <p id="ironAmount"     class="bottomBorder">IronAmount</p>
+          <p id="goldAmount"     class="bottomBorder">GoldAmount</p>
+          <p id="wheatAmount"    class="bottomBorder">WheatAmount</p>
+        </div>
+  
+        <div class="resourceMaxAmount">
+          <p id="woodMaxAmount"     class="bottomBorder">WoodMaxAmount</p>
+          <p id="mineralsMaxAmount" class="bottomBorder">MineralsMaxAmount</p>
+          <p id="coalMaxAmount"     class="bottomBorder">CoalMaxAmount</p>
+          <p id="ironMaxAmount"     class="bottomBorder">IronMaxAmount</p>
+          <p id="goldMaxAmount"     class="bottomBorder">GoldMaxAmount</p>
+          <p id="wheatMaxAmount"    class="bottomBorder">WheatMaxAmount</p>
+        </div>
+  
+        <div class="resourcePerSec">
+          <p id="woodPerSec"     class="bottomBorder">0/s</p>
+          <p id="mineralsPerSec" class="bottomBorder">0/s</p>
+          <p id="coalPerSec"     class="bottomBorder">0/s</p>
+          <p id="ironPerSec"     class="bottomBorder">0/s</p>
+          <p id="goldPerSec"     class="bottomBorder">0/s</p>
+          <p id="wheatPerSec"    class="bottomBorder">0/s</p>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div id="middleGrid">
+      <div id="middleGridHeader" role="group">
+        <button type="button" name="button" id="buildingsBtn" class="btn divSelectorBtn" onclick="changeMiddleDiv('buildingsDiv')"><h1>Buildings</h1></button>
+        <button type="button" name="button" id="upgradesBtn" class="btn divSelectorBtn" onclick="changeMiddleDiv('upgradesDiv')"><h1>Upgrades</h1></button>
+      </div>
+
+      <div id="buildingsDiv">
+        <div class="middleButtonsBackground">
+          <div class="btnGroup">
+            
+            <button class="btn buyBtn" id="Sawmill" onclick="buyBuilding('Sawmill')" onmouseover="buildingTooltipInfo('Sawmill')" onmouseout="buildingTooltipInfo('null')"
+              type="button" name="button">Buy Sawmill</button>
+
+            <button class="btn buyBtn" id="Mine" onclick="buyBuilding('Mine')" onmouseover="buildingTooltipInfo('Mine')" onmouseout="buildingTooltipInfo('null')"
+             type="button" name="button">Buy Mine</button>
+
+            <button class="btn buyBtn" id="Furnace" onclick="buyBuilding('Furnace')" onmouseover="buildingTooltipInfo('Furnace')" onmouseout="buildingTooltipInfo('null')"
+              type="button" name="button">Buy Furnace</button>
+            
+            <button class="btn buyBtn" id="Farm" onclick="buyBuilding('Farm')" onmouseover="buildingTooltipInfo('Farm')" onmouseout="buildingTooltipInfo('null')"
+              type="button" name="button">Buy Farm</button>
+            
+            <button class="btn buyBtn" id="Bakery" onclick="buyBuilding('Bakery')" onmouseover="buildingTooltipInfo('Bakery')" onmouseout="buildingTooltipInfo('null')"
+              type="button" name="button">Buy Bakery</button>
+            
+            <button class="btn buyBtn" id="House" onclick="buyBuilding('House')" onmouseover="buildingTooltipInfo('House')" onmouseout="buildingTooltipInfo('null')"
+              type="button" name="button">Buy House</button>
+
+            <button class="btn buyBtn" id="Storehouse" onclick="buyBuilding('Storehouse')" onmouseover="buildingTooltipInfo('Storehouse')" onmouseout="buildingTooltipInfo('null')"
+              type="button" name="button">Buy Storehouse</button>
+
+          </div>
+        </div>
+      </div>
+      <div id="upgradesDiv">
+        <button class="btn buyBtn" id="hut" onclick="buyBuilding('hut')" onmouseover="tooltipInfo('hut')" onmouseout="tooltipInfo('null')" type="button" name="button">Farm</button>
+      </div>
+    </div>
+
+    <div id="rightGrid">
+      <h1 class="bottomBorder secondHeader">Fight</h1>
+      
+      <div class="resourceName">
+        <p id="foodName" class="bottomBorder">food</p>
+        <p id="peopleName" class="bottomBorder">people</p>
+        <p id="sheepName" class="bottomBorder">sheep</p>
+        <p id="dragonName" class="bottomBorder">dragon</p>
+      </div>
+
+      <div class="resourceAmount">
+        <p id="foodAmount" class="bottomBorder">0</p>
+        <p id="peopleAmount" class="bottomBorder">0</p>
+        <p id="sheepAmount" class="bottomBorder">0</p>
+        <p id="dragonAmount" class="bottomBorder">0</p>
+      </div>
+
+      <div class="resourceMaxAmount">
+        <p id="foodMaxAmount" class="bottomBorder">/0</p>
+        <p id="peopleMaxAmount" class="bottomBorder">/0</p>
+        <p id="sheepMaxAmount" class="bottomBorder">/0</p>
+        <p id="dragonMaxAmount" class="bottomBorder">/0</p>
+      </div>
+
+      <div class="resourcePerSec">
+        <p id="foodPerSec" class="bottomBorder">0/s</p>
+        <p id="peoplePerSec" class="bottomBorder">0/s</p>
+        <p id="sheepPerSec" class="bottomBorder">0/s</p>
+        <p id="dragonPerSec" class="bottomBorder">0/s</p>
+      </div>
+      <div>
+
+        <div class="centerText">
+          <p class="oneThird centerText">SelectedFighters:</p>
+          <p id="fightersSelected" class="oneThird centerText">Amount</p>
+          <p id="fightersSliderProcent" class="oneThird centerText">50%</p>
+        </div>
+        <!-- Fighter Amount Slider -->
+        <input type="range" min="0" max="100" value="50" id="fightersSlider" class="slider" oninput="sliderChange(this.value, 'fighters')"/>
+
+        <button class="btn fillBtn" onclick="startFight()">Fight</button>
+
+        <h1 class="oneThird">Stage: </h1>
+        <h1 id="currentStage" class="twoThird">1</h1>
+        
+        <!-- Enemy Hpbar -->
+        <div class="progressBarOuter">
+          <div id='enemyHpBar' class="progressBarInner"></div>
+        </div>
+
+        <p>Fighters: </p>
+
+        <div class="resourceName">
+          <p id="fighterName" class="bottomBorder">Fighters</p>
+        </div>
+        
+        <div class="resourceAmount">
+          <p id="fighterAmount" class="bottomBorder">0</p>
+        </div>
+        
+        <div class="resourceMaxAmount">
+          <p class="bottomBorder">/0</p>
+        </div>
+        <div class="resourcePerSec">
+          <p class="bottomBorder">/s</p>
+        </div>
+        <!-- Fighter Hpbar -->
+        <div class="progressBarOuter">
+          <div id="fighterHpBar" class="progressBarInner"></div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+</body>
+
+<!-- 
+  Todo:
+  ska alla ha gemensamt hp eller inte?
+  tid mellan varje attack eller inte?
+  mer klasser? (tänk på senare)
+  
+-->
+
+</html>
+
+
